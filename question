@@ -1,0 +1,10 @@
+private static long MAKELONG(long a, long b) {
+      long r1 = a & 0xffff;
+      long r2 = (b & 0xffff) << 16;
+      System.out.println("a:"+a); //4
+      System.out.println("b:"+b); //32768
+      System.out.println("r1:"+r1); //4
+      System.out.println("r2:"+r2); //2147483648
+
+      return r1 | r2; //2147483652
+}
