@@ -8,3 +8,21 @@ private static long MAKELONG(long a, long b) {
 
       return r1 | r2; //2147483652
 }
+
+[[AlertLog[0]=3,"2017/11/20 17:20:50.514","2017/11/20 17:20:50.514","iga-win2012r2-1","lcns",3551,"error1s"],
+     [" AlertLog[1]=3,"2017/11/20 17:20:50.873","2017/11/20 17:20:49.847","iga-win2012r2-2","lcns",3551,"error2s""].
+     [ "AlertLog[2]=3,"2017/11/20 01:46:00.340","2017/11/20 01:45:59.393","iga-win2012r2-2","lcns",3551,"err"o"r3s""]]
+
+fromArray(arr: string[]): AlertLogEntry {
+    console.log( arr)
+    const o = new AlertLogEntry()
+    o.level = toAlertLogLevel(arr[0])
+    o.received = toLogDate(arr[1])
+    o.occurred = toLogDate(arr[2])
+    o.serverName = arr[3]
+    o.moduleName = arr[4]
+    o.eventId = Number(arr[5])
+    o.message = arr[6]
+    console.log('message' + arr[6])
+    return o
+  }
